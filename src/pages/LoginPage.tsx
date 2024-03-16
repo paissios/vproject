@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import LayoutWrapper from "../components/LayoutWrapper/LayoutWrapper";
 
 const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
-}
+  return <LayoutWrapper>LoginPage</LayoutWrapper>;
+};
 
-export default LoginPage
+export default LoginPage;

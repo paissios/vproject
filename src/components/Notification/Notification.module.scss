@@ -1,0 +1,86 @@
+@import "../../variables.scss";
+
+.notificationWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 22px 44px;
+    border-bottom: 1px solid #E2E4E9;
+    position: fixed;
+    top: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    @include transition(all, 0.3s);
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .rightSection {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            color: $black;
+        }
+
+        a {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            text-decoration: none;
+            color: $black;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid $black;
+            @include transition(all, 0.3s);
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-image: url("../../../public/static/contact.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                @include transition(all, 0.3s);
+            }
+
+            &:hover {
+                background-color: $black;
+                color: $white;
+
+                &::before {
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+
+        .closeButton {
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            background-image: url("../../../public/static/close.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 10px;
+            height: 10px;
+            @include transition(all, 0.3s);
+
+            &:hover {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
