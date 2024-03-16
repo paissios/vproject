@@ -54,7 +54,12 @@ const LoginForm: React.FC = () => {
                 <label htmlFor="email">
                   Email Address<span>*</span>
                 </label>
-                <Field className={classes.email} type="email" name="email" />
+                <Field
+                  className={classes.email}
+                  type="email"
+                  name="email"
+                  placeholder="test@test.com"
+                />
                 <ErrorMessage
                   name="email"
                   component="div"
@@ -69,6 +74,7 @@ const LoginForm: React.FC = () => {
                   className={classes.password}
                   type="password"
                   name="password"
+                  placeholder="Enter your password"
                 />
                 <ErrorMessage
                   name="password"

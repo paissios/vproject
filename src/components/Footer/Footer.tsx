@@ -2,9 +2,11 @@ import React from "react";
 import classes from "./Footer.module.scss";
 
 const Footer: React.FC = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className={classes.footer}>
-      <p>© 2024 Demo login</p>
+      <p>© {year} Demo login</p>
     </div>
   );
 };
