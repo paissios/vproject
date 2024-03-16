@@ -12,6 +12,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    background-color: $white;
     @include transition(all, 0.3s);
 
     &.show {
@@ -28,7 +29,7 @@
         p {
             font-size: 14px;
             line-height: 20px;
-            color: $black;
+            color: $gray;
         }
 
         a {
@@ -36,13 +37,14 @@
             gap: 8px;
             align-items: center;
             text-decoration: none;
-            color: $black;
+            color: $gray;
             font-weight: 500;
             font-size: 14px;
             line-height: 20px;
             padding: 10px;
             border-radius: 10px;
-            border: 1px solid $black;
+            border: 1px solid #E2E4E9;
+            box-shadow: 0px 1px 2px 0px #5258660F;
             @include transition(all, 0.3s);
 
             &::before {
@@ -57,12 +59,9 @@
             }
 
             &:hover {
-                background-color: $black;
-                color: $white;
-
-                &::before {
-                    filter: brightness(0) invert(1);
-                }
+                background-color: $lightGray;
+                color: $darkGray;
+                box-shadow: none;
             }
         }
 
@@ -76,11 +75,18 @@
             background-size: contain;
             width: 10px;
             height: 10px;
+            margin-inline-start: 15px;
             @include transition(all, 0.3s);
 
             &:hover {
                 transform: rotate(90deg);
             }
         }
+    }
+}
+
+@media screen and (max-width: 585px) {
+    .notificationWrapper {
+        padding: 16px;
     }
 }

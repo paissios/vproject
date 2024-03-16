@@ -8,7 +8,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    padding: 50px 0;
+    padding: 136px 0 20px 0;
 
     .formHeader {
         display: flex;
@@ -35,7 +35,7 @@
             font-size: 14px;
             line-height: 20px;
             text-align: center;
-            color: $black;
+            color: $gray;
         }
     }
 
@@ -63,7 +63,7 @@
                 padding: 10px 12px 10px 40px;
                 border: 1px solid #E2E4E9;
                 box-shadow: 0px 1px 2px 0px #E4E5E73D;
-                border-radius: 4px;
+                border-radius: 10px;
                 font-size: 14px;
                 line-height: 20px;
                 color: $darkGray;
@@ -71,11 +71,20 @@
                 outline: none;
                 background-repeat: no-repeat;
                 background-position: 12px center;
+                @include transition(all, 0.3s);
 
+                &::placeholder {
+                    color: #868C98;
+                }
 
                 &:focus,
                 &:focus-visible {
                     border-color: $green;
+                }
+
+                &:hover {
+                    border-color: $lightGray;
+                    background-color: $lightGray;
                 }
 
                 &.email {
